@@ -8,9 +8,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Set the environment variable for the API key (ensure you do this securely)
-# For demonstration, it's hardcoded, but using environment variables is best practice
-# os.environ["GOOGLE_API_KEY"] = "YOUR_API_KEY"
+
 
 # Import the Google Gemini client
 client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
