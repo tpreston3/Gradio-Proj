@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 key = os.environ.get('GOOGLE_API_KEY')
 key1 = os.environ.get('GEMINI_API_KEY')

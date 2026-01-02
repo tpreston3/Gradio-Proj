@@ -3,12 +3,17 @@ from google.genai import types
 import asyncio
 import os
 
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 # Set the environment variable for the API key (ensure you do this securely)
 # For demonstration, it's hardcoded, but using environment variables is best practice
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCDR4LxIahZQBzZE0uGNGDQi1hTzKyA5Z8"
+# os.environ["GOOGLE_API_KEY"] = "YOUR_API_KEY"
 
 # Import the Google Gemini client
-client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
 
 configuration = types.GenerateContentConfig(system_instruction="You're a helpful assistant.",tools=[types.Tool(google_search=types.GoogleSearch())])
 

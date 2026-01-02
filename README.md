@@ -19,10 +19,11 @@ The application supports various Gemini and PaLM models. Below is a summary of k
 
 | Model | Token Limits (In/Out) | Description |
 | :--- | :--- | :--- |
-| **Gemini 1.5 Pro** | 2M / 8192 | Mid-size multimodal model, excellent for complex reasoning and large contexts. |
-| **Gemini 1.5 Flash** | 1M / 8192 | Fast and versatile multimodal model, efficient for high-frequency tasks. |
-| **Gemini 1.5 Flash-8B** | 1M / 8192 | Smallest, most cost-effective Flash model. |
-| **PaLM 2 (Legacy)** | 8196 / 1024 | Legacy text-only model. |
+| **Gemini 3 Pro** | 1M+ / 8192 | Latest preview reasoning model with "Deep Think" capabilities. |
+| **Gemini 3 Flash** | 1M / 8192 | Next-gen efficiency, delivering Pro-level smarts at high speed. |
+| **Gemini 2.5 Pro** | 1M / 65k | Flagship production model for complex workflows and coding. |
+| **Gemini 2.5 Flash** | 1M / 65k | High-throughput, low-latency multimodal workhorse. |
+| **Gemini 2.5 Flash-Lite** | 128k / 8192 | Ultra-lightweight and cost-effective for simple tasks. |
 
 *See `gemini-models_documentation.md` for a complete list of legacy and experimental models.*
 

@@ -3,6 +3,9 @@ import re
 import os
 import time # For the dummy bot in case API fails
 import google.generativeai as genai
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # --- Configuration ---
 # IMPORTANT: Set your GOOGLE_API_KEY environment variable,
