@@ -38,13 +38,23 @@ The application supports various Gemini and PaLM models. Below is a summary of k
 
 The application relies on the `GOOGLE_API_KEY` environment variable.
 
-**Windows (PowerShell):**
+**Recommended: Use a `.env` file**
+
+Create a file named `.env` in the project root:
+
+```
+GOOGLE_API_KEY=your_actual_api_key_here
+```
+
+The application uses `python-dotenv` to automatically load this variable.
+
+**Legacy Method (PowerShell):**
 
 ```powershell
 $env:GOOGLE_API_KEY="your_actual_api_key_here"
 ```
 
-**Linux/macOS:**
+**Legacy Method (Linux/macOS):**
 
 ```bash
 export GOOGLE_API_KEY="your_actual_api_key_here"
@@ -55,8 +65,13 @@ export GOOGLE_API_KEY="your_actual_api_key_here"
 Install the required Python packages:
 
 ```bash
-pip install gradio google-generativeai google-genai
+pip install gradio google-generativeai google-genai python-dotenv
 ```
+
+* `gradio`: For the web UI.
+* `google-generativeai`: The standard Python SDK for Gemini (used in `GradioVersion1.py`).
+* `google-genai`: The newer/beta SDK (used in `gemini_async.py`).
+* `python-dotenv`: For loading environment variables from `.env`.
 
 ## Usage
 
@@ -88,5 +103,5 @@ python get_apikey.py
 
 ## Development Notes
 
-* **Model Metadata:** The list of models and their attributes in `GradioVersion1.py` is hardcoded. If new models are released, that string needs to be manually updated.
+* **Model Metadata:** The list of models is now dynamically read from `gemini-models_documentation.md`. To update the model list (e.g., add new models or change descriptions), simply edit this markdown file.
 * **SDK Usage:** The project currently mixes usage of `google.generativeai` (standard) and `google.genai` (newer). Future refactoring might aim to standardize on one SDK.
